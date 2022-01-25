@@ -99,7 +99,7 @@ class sudoku():
             c = 0
             # print row
             for num in row:
-                print("{n} {s}".format(n=str(num) if num != 0 else 'X', s=' ' if c==2 else ''), end='')
+                print("{n} {s}".format(n=str(num) if num != 0 else 'x', s=' ' if c==2 else ''), end='')
                 c = (c + 1) % 3
             print()   # print newline
             if r == 2:
