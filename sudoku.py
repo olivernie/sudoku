@@ -429,17 +429,19 @@ class sudoku():
             S.set_value(row, col, candidate)
             S.preprocess()
             ret = S.solving()
-            if ret == -1: 
-                print("{s}Found conflict".format(s = '  '*(depth+1)))
-
-            elif ret == 0:
-                # unsolved, continue guess()
-                ret = S.guess(depth+1)
-
-            elif ret == 1:
+            if ret == 1:
                 # solved
                 S.print_rslt()
                 break
+            elif ret == -1: 
+                # found conflict
+                print("{s}Found conflict".format(s = '  '*(depth+1)))
+            elif ret == 0:
+                # unsolved, continue guess() recursively
+                ret = S.guess(depth+1)
+                # break if solved
+                if ret == 1:
+                    break
 
         return ret
     
