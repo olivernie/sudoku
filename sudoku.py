@@ -65,7 +65,7 @@ class sudoku():
         self._rslt_data = []
         for line in fd:
             row = []
-            data = line.split(' ')
+            data = line.strip().split(' ')
             for n in data:
                 row.append(int(n))
             self._orig_data.append(row)
