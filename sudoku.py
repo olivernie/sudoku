@@ -3,7 +3,7 @@ import sys
 import os
 
 class sudoku():
-    'A Sudoku Solver'
+    '''A Sudoku Solver'''
     _file_name = ""
     _is_loaded = False
     _orig_data = []
